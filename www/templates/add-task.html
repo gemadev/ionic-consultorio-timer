@@ -1,0 +1,46 @@
+<ion-view view-title="Agregar tarea">
+  <ion-content ng-controller="AddTaskCtrl">
+    <div class="list">
+      <div class="item item-divider">Nueva tarea</div>
+      <form ng-submit="add(patient, box, specialty, time, sound, vibrate)">
+        <label class="item item-input item-select">
+          <span class="input-label">Paciente</span>
+          <select ng-model="patient" ng-options="p.name for p in patients" required></select>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Box</span>
+          <input type="number" ng-model="box" required>
+        </label>
+        <label class="item item-input item-select">
+          <span class="input-label">Especialidad</span>
+          <select ng-model="specialty" ng-options="s.name for s in specialties" required></select>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Minutos</span>
+          <input type="number" ng-model="time" required>
+        </label>
+        <li class="item item-toggle">
+          Sonido
+          <label class="toggle toggle-positive">
+             <input type="checkbox" ng-model="sound">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+          </label>
+        </li>
+        <li class="item item-toggle">
+          Vibrar
+          <label class="toggle toggle-positive">
+             <input type="checkbox" ng-model="vibrate">
+             <div class="track">
+               <div class="handle"></div>
+             </div>
+          </label>
+        </li>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive">Agregar tarea</button>
+        </div>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

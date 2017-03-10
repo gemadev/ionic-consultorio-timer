@@ -1,0 +1,20 @@
+<ion-view view-title="Agregar especialidad">
+  <ion-content ng-controller="SpecialtyCtrl">
+    <div class="list">
+      <div class="item item-divider">Nueva especialidad</div>
+      <form ng-submit="add(name)">
+        <label class="item item-input">
+          <span class="input-label">Nombre</span>
+          <input type="text" ng-model="name" required>
+        </label>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive">Agregar especialidad</button>
+        </div>
+        <div class="item item-divider">Lista de especialidades</div>
+        <div class="item" ng-repeat="specialty in specialties | orderBy: 'name'">
+        <h2 class="input-label">{{specialty.name}}</h2>
+        </div>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

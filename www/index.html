@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link rel="manifest" href="manifest.json">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="js/ng-cordova.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="lib/moment/moment.js"></script>
+    <script src="lib/humanize-duration/humanize-duration.js"></script>
+    <script src="lib/angular-timer/dist/angular-timer.min.js"></script>
+    <script src="js/patientstore.js"></script>
+    <script src="js/specialtystore.js"></script>
+    <script src="js/taskstore.js"></script>
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="consultorio">
+    <ion-side-menus enable-menu-with-back-views="true">
+      <ion-side-menu-content>
+        <ion-nav-bar class="bar-positive">
+          <ion-nav-back-button></ion-nav-back-button>
+          <ion-nav-buttons side="right">
+            <button menu-toggle="right" class="button button-icon icon ion-navicon"></button>
+          </ion-nav-buttons>
+          <ion-nav-view></ion-nav-view>
+        </ion-nav-bar>
+      </ion-side-menu-content>
+      <ion-side-menu side="right">
+        <div class="list">
+          <div class="item item-divider">Historial</div>
+          <a class="item" menu-close ui-sref="active-tasks">Tareas programadas</a>
+          <a class="item" menu-close ui-sref="history-tasks">Tareas finalizadas</a>
+          <div class="item item-divider">Gestión</div>
+          <a class="item" menu-close ui-sref="add-task">Agregar tarea</a>
+          <a class="item" menu-close ui-sref="add-patient">Agregar paciente</a>
+          <a class="item" menu-close ui-sref="add-specialty">Agregar especialidad</a>
+        </div>
+      </ion-side-menu>
+    </ion-side-menus>
+  </body>
+</html>
