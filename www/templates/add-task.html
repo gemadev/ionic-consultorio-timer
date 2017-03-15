@@ -3,9 +3,9 @@
     <div class="list">
       <div class="item item-divider">Nueva tarea</div>
       <form ng-submit="add(patient, box, specialty, time, sound, vibrate)">
-        <label class="item item-input item-select">
+        <label class="item item-input">
           <span class="input-label">Paciente</span>
-          <select ng-model="patient" ng-options="p.name for p in patients" required></select>
+          <input type="text" ng-model="patient" required>
         </label>
         <label class="item item-input">
           <span class="input-label">Box</span>

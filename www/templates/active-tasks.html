@@ -3,7 +3,7 @@
     <div class="list">
       <div class="item item-divider">Tareas activas</div>
       <div class="item" ng-repeat="task in tasks | orderBy: '-id'" ng-show="task.active">
-        <h2>{{task.patient.name}} (Box {{task.box}})</h2>
+        <h2>{{task.patient}} (Box {{task.box}})</h2>
         <h2>Especialidad: <span class="item-note">{{task.specialty.name}}</span></h2>
         <p>Hora inicio: <span class="item-note">{{formatDate(task.start)}}</span></p>
         <p>Hora fin: <span class="item-note">{{formatDate(task.end)}}</span></p>

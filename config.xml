@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.ionicframework.consultorioapp821767" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>ConsultorioApp</name>
+  <name>Consultorio Timer App</name>
   <description>
-        An Ionic Framework and Cordova project.
+    Una aplicación sencilla en Ionic para que vibre y/o suene cuando se cumple un tiempo determinado.
     </description>
-  <author email="you@example.com" href="http://example.com/">
-      Your Name Here
+  <author email="julianidiart1987@hotmail.com" href="http://gemadev.com.ar">
+      Gema Development
     </author>
   <content src="index.html"/>
   <access origin="*"/>
