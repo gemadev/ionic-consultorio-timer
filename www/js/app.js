@@ -67,17 +67,17 @@
       var id = startTime.getTime().toString();
       var notificationSound = null;
       if(sound) notificationSound = 'file://audio/notification.wav';
-      // $cordovaLocalNotification.add({
-      //   id: id,
-      //   date: endTime,
-      //   title: patient + ' (Box ' + box + ')',
-      //   message: specialty.name + ' fin! (' + time + ' minuto' + ((time != 1)?'s':'') + ')',
-      //   autoCancel: true,
-      //   sound: notificationSound
-      // }).then(function() {
+      $cordovaLocalNotification.add({
+        id: id,
+        date: endTime,
+        title: patient + ' (Box ' + box + ')',
+        message: specialty.name + ' fin! (' + time + ' minuto' + ((time != 1)?'s':'') + ')',
+        autoCancel: true,
+        sound: notificationSound
+      }).then(function() {
         var task = { id: id, patient: patient, box: box, specialty: specialty, start: startTime, end: endTime, sound: sound, vibrate: vibrate, active: true };
         TaskStore.create(task);
-      // });
+      });
       $scope.patient = '';
       $scope.box = '';
       $scope.specialty = '';
