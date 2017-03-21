@@ -12,6 +12,15 @@
       create: function(name) {
         specialties.push({id: new Date().getTime().toString(), name: name});
         persist();
+      },
+      remove: function(id) {
+        for(var i = 0; i < specialties.length; i++) {
+          if(specialties[i].id === id) {
+            specialties.splice(i, 1);
+            persist();
+            return;
+          }
+        }
       }
     };
   });

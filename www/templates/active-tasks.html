@@ -1,14 +1,15 @@
 <ion-view view-title="Tareas activas">
   <ion-content ng-controller="ListTaskCtrl">
-    <div class="list">
-      <div class="item item-divider">Tareas activas</div>
-      <div class="item" ng-repeat="task in tasks | orderBy: '-id'" ng-show="task.active">
+    <ion-list>
+      <ion-item class="item-divider">Tareas activas</ion-item>
+      <ion-item class="item-remove-animate" ng-repeat="task in tasks | orderBy: '-id'" ng-show="task.active">
         <h2>{{task.patient}} (Box {{task.box}})</h2>
         <h2>Especialidad: <span class="item-note">{{task.specialty.name}}</span></h2>
         <p>Hora inicio: <span class="item-note">{{formatDate(task.start)}}</span></p>
         <p>Hora fin: <span class="item-note">{{formatDate(task.end)}}</span></p>
         <p>Tiempo restante: <span class="item-note"><timer end-time="task.end" max-time-unit="'hour'">{{hhours}}:{{mminutes}}:{{sseconds}}</timer></span></p>
-      </div>
-    </div>
+        <ion-option-button class="button-assertive" ng-click="remove(task.id)">Eliminar</ion-option-button>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>

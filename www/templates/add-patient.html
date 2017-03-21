@@ -1,7 +1,7 @@
 <ion-view view-title="Agregar paciente">
   <ion-content ng-controller="PatientCtrl">
-    <div class="list">
-      <div class="item item-divider">Nuevo paciente</div>
+    <ion-list>
+      <ion-item class="item-divider">Nuevo paciente</ion-item>
       <form ng-submit="add(name)">
         <label class="item item-input">
           <span class="input-label">Nombre</span>
@@ -10,11 +10,11 @@
         <div class="padding">
           <button type="submit" class="button button-block button-positive">Agregar paciente</button>
         </div>
-        <div class="item item-divider">Lista de pacientes</div>
-        <div class="item" ng-repeat="patient in patients | orderBy: 'name'">
-        <h2 class="input-label">{{patient.name}}</h2>
-        </div>
+        <ion-item class="item-divider">Lista de pacientes</ion-item>
+        <ion-item ng-repeat="patient in patients | orderBy: 'name'">
+          <h2 class="input-label">{{patient.name}}</h2>
+        </ion-item>
       </form>
-    </div>
+    </ion-list>
   </ion-content>
 </ion-view>

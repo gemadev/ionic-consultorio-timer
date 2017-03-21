@@ -49,6 +49,10 @@
         ("0" + date.getMinutes()).slice(-2) + ":" +
         ("0" + date.getSeconds()).slice(-2);
     };
+
+    $scope.remove = function(id) {
+      TaskStore.remove(id);
+    };
   });
 
   app.controller('AddTaskCtrl', function($scope, $state, $cordovaLocalNotification, $cordovaVibration, PatientStore, SpecialtyStore, TaskStore) {
@@ -103,7 +107,11 @@
       SpecialtyStore.create(name);
       $scope.name = '';
       $state.go('add-task');
-    }
+    };
+
+    $scope.remove = function(id) {
+      SpecialtyStore.remove(id);
+    };
   });
 
 }());
